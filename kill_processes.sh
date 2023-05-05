@@ -2,7 +2,7 @@
 
 if [[ $# -ne 1 ]]; then
   echo "Usage: $0 n"
-  echo "where n is the number of instances to kill (0 to n-1)"
+  echo -e "\033[0;31mwhere n is the number of instances to kill (0 to n-1)"
   exit 1
 fi
 
@@ -14,5 +14,5 @@ for (( i=0; i<$n; i++ )); do
   lsof -ti :$port | xargs kill -9
 done
 
-echo "All instances killed."
+echo -e "\033[0;32mAll instances killed."
 
