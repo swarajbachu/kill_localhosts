@@ -10,7 +10,7 @@ n=$1
 
 for (( i=0; i<$n; i++ )); do
   port=$((3000+i))
-  echo "Killing instance on port $port..."
+  echo -e "\033[0;32mKilling instance on port $port..."
   lsof -ti :$port | xargs kill -9
 done
 
